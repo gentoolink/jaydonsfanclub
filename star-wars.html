@@ -136,7 +136,7 @@
       transition: transform 0.3s, background 0.3s; cursor: default;
     }
     .char-card:hover { transform: translateY(-5px); background: rgba(255,214,0,0.1); }
-    .char-card .char-icon { font-size: 4rem; display: block; margin-bottom: 0.5rem; }
+    .char-card .char-icon { width: 80px; height: 80px; margin: 0 auto 0.5rem; display: block; }
     .char-card .char-name { font-weight: 800; font-size: 1rem; }
     .char-card .char-tag { font-size: 0.8rem; color: var(--yellow); margin-top: 0.3rem; }
 
@@ -239,36 +239,190 @@
 
   <h2 style="font-family: 'Fredoka One', cursive; color: var(--yellow); text-align: center; margin-bottom: 1.5rem;">Favorite Characters</h2>
   <div class="character-gallery">
+
+    <!-- Luke Skywalker -->
     <div class="char-card">
-      <span class="char-icon">🧔</span>
+      <svg class="char-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="40" fill="#E8C49A"/>
+        <path d="M20 45 Q50 5 80 45" fill="#C4A255"/>
+        <ellipse cx="50" cy="30" rx="25" ry="12" fill="#C4A255"/>
+        <circle cx="38" cy="48" r="5" fill="#4A90D9"/>
+        <circle cx="62" cy="48" r="5" fill="#4A90D9"/>
+        <circle cx="38" cy="48" r="2" fill="#1a1a2e"/>
+        <circle cx="62" cy="48" r="2" fill="#1a1a2e"/>
+        <path d="M42 62 Q50 68 58 62" stroke="#B8906A" stroke-width="2" fill="none"/>
+        <rect x="35" y="70" width="30" height="20" rx="5" fill="#1a1a2e"/>
+        <rect x="38" y="73" width="24" height="14" rx="3" fill="#4A90D9"/>
+      </svg>
       <span class="char-name">Luke Skywalker</span>
       <div class="char-tag">Hero of the Rebellion</div>
     </div>
+
+    <!-- R2-D2 -->
     <div class="char-card">
-      <span class="char-icon">🤖</span>
+      <svg class="char-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="75" rx="25" ry="20" fill="#F0F0F0"/>
+        <rect x="30" y="35" width="40" height="35" rx="15" fill="#F0F0F0"/>
+        <ellipse cx="50" cy="35" rx="20" ry="10" fill="#E0E0E0"/>
+        <circle cx="42" cy="32" r="6" fill="#0066CC"/>
+        <circle cx="58" cy="32" r="6" fill="#CC0000"/>
+        <rect x="40" y="48" width="20" height="8" rx="2" fill="#1a1a2e"/>
+        <rect x="43" y="50" width="4" height="4" fill="#00FF00"/>
+        <rect x="49" y="50" width="4" height="4" fill="#00FF00"/>
+        <rect x="55" y="50" width="4" height="4" fill="#00FF00"/>
+        <circle cx="50" cy="70" r="5" fill="#0066CC"/>
+        <rect x="25" y="55" width="8" height="15" rx="3" fill="#AAAAAA"/>
+        <rect x="67" y="55" width="8" height="15" rx="3" fill="#AAAAAA"/>
+        <ellipse cx="50" cy="90" rx="15" ry="5" fill="#CCCCCC"/>
+      </svg>
       <span class="char-name">R2-D2</span>
       <div class="char-tag">The Bravest Droid</div>
     </div>
+
+    <!-- Yoda -->
     <div class="char-card">
-      <span class="char-icon">🐸</span>
+      <svg class="char-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="85" rx="18" ry="10" fill="#3D8B3D"/>
+        <ellipse cx="50" cy="70" rx="20" ry="18" fill="#5DAA5D"/>
+        <circle cx="42" cy="65" r="6" fill="#FFE44D"/>
+        <circle cx="58" cy="65" r="6" fill="#FFE44D"/>
+        <circle cx="42" cy="65" r="2" fill="#1a1a2e"/>
+        <circle cx="58" cy="65" r="2" fill="#1a1a2e"/>
+        <ellipse cx="50" cy="75" rx="5" ry="3" fill="#4A8A4A"/>
+        <path d="M40 78 Q50 82 60 78" stroke="#3D7A3D" stroke-width="2" fill="none"/>
+        <path d="M25 55 Q35 35 50 30" stroke="#5DAA5D" stroke-width="8" fill="none"/>
+        <path d="M75 55 Q65 35 50 30" stroke="#5DAA5D" stroke-width="8" fill="none"/>
+        <path d="M30 50 Q50 20 70 50" stroke="#5DAA5D" stroke-width="6" fill="none"/>
+        <ellipse cx="50" cy="35" rx="15" ry="8" fill="#5DAA5D"/>
+      </svg>
       <span class="char-name">Yoda</span>
-      <div class="char-tag">Wise & Powerful</div>
+      <div class="char-tag">Wise &amp; Powerful</div>
     </div>
+
+    <!-- Rey -->
     <div class="char-card">
-      <span class="char-icon">🦸</span>
+      <svg class="char-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="38" fill="#E0C4A8"/>
+        <path d="M18 45 Q50 5 82 45" fill="#8B5A2B"/>
+        <path d="M20 50 Q50 15 80 50 Q60 55 50 52 Q40 55 20 50" fill="#8B5A2B"/>
+        <ellipse cx="50" cy="38" rx="22" ry="10" fill="#8B5A2B"/>
+        <circle cx="40" cy="48" r="5" fill="#6B8E23"/>
+        <circle cx="60" cy="48" r="5" fill="#6B8E23"/>
+        <circle cx="40" cy="48" r="2" fill="#1a1a2e"/>
+        <circle cx="60" cy="48" r="2" fill="#1a1a2e"/>
+        <path d="M44 62 Q50 66 56 62" stroke="#C4A080" stroke-width="2" fill="none"/>
+        <path d="M28 55 Q20 35 35 25" stroke="#8B5A2B" stroke-width="6" fill="none"/>
+        <path d="M72 55 Q80 35 65 25" stroke="#8B5A2B" stroke-width="6" fill="none"/>
+        <rect x="35" y="75" width="30" height="18" rx="5" fill="#C49A6C"/>
+        <rect x="40" y="78" width="20" height="12" rx="3" fill="#8B5A2B"/>
+      </svg>
       <span class="char-name">Rey</span>
       <div class="char-tag">A New Hero</div>
     </div>
+
+    <!-- Grogu (Baby Yoda) -->
     <div class="char-card">
-      <span class="char-icon">👻</span>
+      <svg class="char-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="88" rx="14" ry="8" fill="#3D8B3D"/>
+        <ellipse cx="50" cy="72" rx="22" ry="20" fill="#5DAA5D"/>
+        <circle cx="40" cy="66" r="10" fill="#1a1a2e"/>
+        <circle cx="60" cy="66" r="10" fill="#1a1a2e"/>
+        <circle cx="40" cy="66" r="7" fill="#2a2a3a"/>
+        <circle cx="60" cy="66" r="7" fill="#2a2a3a"/>
+        <circle cx="40" cy="66" r="4" fill="#3a3a4a"/>
+        <circle cx="60" cy="66" r="4" fill="#3a3a4a"/>
+        <ellipse cx="50" cy="78" rx="4" ry="2" fill="#4A8A4A"/>
+        <path d="M44 80 Q50 84 56 80" stroke="#3D7A3D" stroke-width="2" fill="none"/>
+        <path d="M28 58 Q38 38 50 32" stroke="#5DAA5D" stroke-width="10" fill="none"/>
+        <path d="M72 58 Q62 38 50 32" stroke="#5DAA5D" stroke-width="10" fill="none"/>
+        <ellipse cx="50" cy="38" rx="18" ry="10" fill="#5DAA5D"/>
+        <ellipse cx="50" cy="42" rx="12" ry="6" fill="#4A9A4A"/>
+      </svg>
       <span class="char-name">Grogu (Baby Yoda)</span>
       <div class="char-tag">Too Cute!</div>
     </div>
+
+    <!-- Stormtrooper -->
     <div class="char-card">
-      <span class="char-icon">🐕</span>
-      <span class="char-name">Chewbacca</span>
-      <div class="char-tag">RAAAWR!</div>
+      <svg class="char-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="55" r="35" fill="#F0F0F0"/>
+        <rect x="20" y="20" width="60" height="40" rx="10" fill="#1a1a2e"/>
+        <rect x="28" y="30" width="44" height="15" rx="5" fill="#1a1a2e"/>
+        <rect x="28" y="50" width="20" height="8" rx="2" fill="#1a1a2e"/>
+        <rect x="52" y="50" width="20" height="8" rx="2" fill="#1a1a2e"/>
+        <rect x="30" y="32" width="16" height="10" rx="3" fill="#1a1a2e"/>
+        <rect x="54" y="32" width="16" height="10" rx="3" fill="#1a1a2e"/>
+        <circle cx="36" cy="36" r="3" fill="#00B4FF"/>
+        <circle cx="64" cy="36" r="3" fill="#00B4FF"/>
+        <rect x="38" y="75" width="24" height="18" rx="5" fill="#F0F0F0"/>
+        <rect x="40" y="78" width="20" height="12" rx="3" fill="#1a1a2e"/>
+      </svg>
+      <span class="char-name">Stormtrooper</span>
+      <div class="char-tag">Imperial Soldier</div>
     </div>
+
+    <!-- Han Solo -->
+    <div class="char-card">
+      <svg class="char-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="38" fill="#E8C49A"/>
+        <path d="M15 45 Q50 10 85 45" fill="#5C3A1E"/>
+        <path d="M20 50 Q50 20 80 50 L70 55 Q50 35 30 55 Z" fill="#5C3A1E"/>
+        <ellipse cx="50" cy="38" rx="22" ry="12" fill="#5C3A1E"/>
+        <circle cx="40" cy="48" r="5" fill="#4A3728"/>
+        <circle cx="60" cy="48" r="5" fill="#4A3728"/>
+        <circle cx="40" cy="48" r="2" fill="#1a1a2e"/>
+        <circle cx="60" cy="48" r="2" fill="#1a1a2e"/>
+        <path d="M44 62 Q50 67 56 62" stroke="#C49A6C" stroke-width="2" fill="none"/>
+        <rect x="35" y="70" width="30" height="20" rx="5" fill="#1a1a2e"/>
+        <rect x="35" y="72" width="30" height="6" rx="2" fill="#CC0000"/>
+      </svg>
+      <span class="char-name">Han Solo</span>
+      <div class="char-tag">The Best Smuggler</div>
+    </div>
+
+    <!-- Princess Leia -->
+    <div class="char-card">
+      <svg class="char-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="52" r="36" fill="#E0C4A8"/>
+        <path d="M15 50 Q50 5 85 50" fill="#8B5A2B"/>
+        <path d="M15 50 Q30 20 50 18 Q70 20 85 50 Q65 60 50 58 Q35 60 15 50" fill="#8B5A2B"/>
+        <ellipse cx="50" cy="38" rx="20" ry="12" fill="#8B5A2B"/>
+        <circle cx="40" cy="50" r="5" fill="#4A90D9"/>
+        <circle cx="60" cy="50" r="5" fill="#4A90D9"/>
+        <circle cx="40" cy="50" r="2" fill="#1a1a2e"/>
+        <circle cx="60" cy="50" r="2" fill="#1a1a2e"/>
+        <path d="M44 64 Q50 68 56 64" stroke="#C4A080" stroke-width="2" fill="none"/>
+        <path d="M20 50 Q15 30 30 22" stroke="#8B5A2B" stroke-width="8" fill="none"/>
+        <path d="M80 50 Q85 30 70 22" stroke="#8B5A2B" stroke-width="8" fill="none"/>
+        <rect x="38" y="75" width="24" height="18" rx="5" fill="#F0F0F0"/>
+      </svg>
+      <span class="char-name">Princess Leia</span>
+      <div class="char-tag">Leader &amp; Hero</div>
+    </div>
+
+    <!-- Darth Vader -->
+    <div class="char-card">
+      <svg class="char-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="40" fill="#1a1a2e"/>
+        <rect x="15" y="25" width="70" height="45" rx="10" fill="#1a1a2e"/>
+        <rect x="25" y="32" width="22" height="14" rx="5" fill="#1a1a2e"/>
+        <rect x="53" y="32" width="22" height="14" rx="5" fill="#1a1a2e"/>
+        <ellipse cx="36" cy="38" rx="8" ry="5" fill="#8B0000"/>
+        <ellipse cx="64" cy="38" rx="8" ry="5" fill="#8B0000"/>
+        <ellipse cx="36" cy="38" rx="4" ry="2" fill="#FF0000"/>
+        <ellipse cx="64" cy="38" rx="4" ry="2" fill="#FF0000"/>
+        <rect x="40" y="52" width="20" height="5" rx="2" fill="#2a2a3a"/>
+        <rect x="43" y="53" width="2" height="3" fill="#1a1a2e"/>
+        <rect x="47" y="53" width="2" height="3" fill="#1a1a2e"/>
+        <rect x="51" y="53" width="2" height="3" fill="#1a1a2e"/>
+        <rect x="55" y="53" width="2" height="3" fill="#1a1a2e"/>
+        <path d="M35 75 L65 75 L68 95 L32 95 Z" fill="#2a2a3a"/>
+        <rect x="40" y="70" width="20" height="8" rx="3" fill="#1a1a2e"/>
+      </svg>
+      <span class="char-name">Darth Vader</span>
+      <div class="char-tag">The Dark Side</div>
+    </div>
+
   </div>
 
   <div style="text-align: center; margin-top: 2rem;">
