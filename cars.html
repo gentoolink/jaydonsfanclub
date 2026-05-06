@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixar Cars — Jaydon's Fanclub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #FF3B3B;
+      --orange: #FF6B00;
+      --yellow: #FFD600;
+      --dark: #1a0a0a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: var(--dark); color: #fff; overflow-x: hidden; }
+
+    .rainbow-bar { height: 8px; background: linear-gradient(90deg, #FF3B3B, #FF6B00, #FFD600, #00E676, #00B4FF, #9B5DE5, #FF3B8D); }
+
+    nav {
+      background: rgba(26, 10, 10, 0.95); padding: 1rem 2rem; display: flex;
+      align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);
+    }
+    nav .logo { font-family: 'Fredoka One', cursive; font-size: 1.4rem; color: var(--red); text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: 700; transition: color 0.2s; }
+    nav ul li a:hover, nav ul li a.active { color: var(--red); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 25px; height: 3px; background: var(--red); border-radius: 3px; }
+
+    .hero {
+      min-height: 60vh; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center; padding: 3rem 2rem;
+      background: radial-gradient(ellipse at top, #3d1010 0%, var(--dark) 60%);
+      position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: ''; position: absolute; width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(255, 59, 59, 0.1) 0%, transparent 60%);
+      top: -150px; animation: pulse 5s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+    .hero-badge {
+      background: var(--red); color: #fff;
+      font-weight: 800; font-size: 0.8rem; padding: 0.4rem 1.2rem;
+      border-radius: 50px; letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 1.5rem; position: relative; z-index: 1;
+    }
+    .hero h1 {
+      font-family: 'Fredoka One', cursive; font-size: clamp(3rem, 10vw, 6rem);
+      background: linear-gradient(135deg, var(--red), var(--orange), var(--yellow));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 0.5rem; position: relative; z-index: 1;
+    }
+    .hero p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 500px; margin-bottom: 2rem; position: relative; z-index: 1; }
+
+    .speed-lines {
+      position: absolute; top: 50%; left: 0; right: 0; height: 2px;
+      overflow: hidden; pointer-events: none; z-index: 0;
+    }
+    .speed-line {
+      position: absolute; height: 2px; border-radius: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,107,0,0.6), transparent);
+      animation: speed 1.5s linear infinite;
+    }
+    @keyframes speed { from { transform: translateX(-100%); } to { transform: translateX(100vw); } }
+
+    .content { max-width: 900px; margin: 0 auto; padding: 2rem; }
+
+    .race-track {
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,107,0,0.1); border: 2px dashed var(--orange);
+      border-radius: 20px; padding: 2rem; margin: 2rem 0; text-align: center;
+    }
+    .race-track h2 { font-family: 'Fredoka One', cursive; font-size: 2rem; color: var(--orange); }
+    .race-track p { color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+    .finish-flag { font-size: 4rem; display: block; margin-bottom: 0.5rem; }
+
+    .fact-cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;
+    }
+    .fact-card {
+      background: rgba(255,59,59,0.08); border: 1px solid rgba(255,59,59,0.2);
+      border-radius: 20px; padding: 1.5rem; text-align: center;
+    }
+    .fact-card .icon { font-size: 3rem; margin-bottom: 0.5rem; display: block; }
+    .fact-card h3 { font-family: 'Fredoka One', cursive; color: var(--red); font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .fact-card p { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+
+    .car-gallery {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 2rem 0;
+    }
+    .car-card {
+      background: rgba(255,255,255,0.05); border-radius: 20px; padding: 1.5rem 1rem; text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .car-card:hover { transform: translateY(-5px); background: rgba(255,59,59,0.1); }
+    .car-card .car-icon { font-size: 4rem; display: block; margin-bottom: 0.5rem; }
+    .car-card .car-name { font-weight: 800; font-size: 0.95rem; }
+    .car-card .car-trait { font-size: 0.8rem; color: var(--orange); margin-top: 0.3rem; }
+
+    .quote-box {
+      background: rgba(255,107,0,0.1); border-left: 4px solid var(--orange);
+      border-radius: 0 16px 16px 0; padding: 1.5rem 2rem; margin: 2rem 0;
+    }
+    .quote-box p { font-size: 1.3rem; font-weight: 700; color: var(--orange); font-style: italic; }
+    .quote-box cite { display: block; margin-top: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.85rem; font-style: normal; }
+
+    .btn-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--red); color: #fff;
+      padding: 0.8rem 1.8rem; border-radius: 50px; font-weight: 800;
+      text-decoration: none; font-size: 0.95rem; margin-top: 1rem; transition: transform 0.2s;
+    }
+    .btn-back:hover { transform: translateY(-2px); }
+
+    footer {
+      background: var(--dark); border-top: 2px solid rgba(255,59,59,0.2);
+      padding: 2rem; text-align: center; margin-top: 3rem;
+    }
+    footer p { color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+    footer a { color: var(--red); text-decoration: none; }
+
+    @media (max-width: 700px) {
+      nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26,10,10,0.98); flex-direction: column; padding: 1.5rem; gap: 1rem; text-align: center; }
+      nav ul.open { display: flex; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rainbow-bar"></div>
+
+<nav>
+  <a href="index.html" class="logo">🎉 Jaydon's Fanclub</a>
+  <div class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="star-wars.html">⭐ Star Wars</a></li>
+    <li><a href="bob-the-builder.html">🔧 Bob the Builder</a></li>
+    <li><a href="cars.html" class="active">🏎️ Cars</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="speed-lines">
+    <div class="speed-line" style="width:150px;top:20%;animation-delay:0s"></div>
+    <div class="speed-line" style="width:200px;top:50%;animation-delay:0.4s"></div>
+    <div class="speed-line" style="width:120px;top:80%;animation-delay:0.8s"></div>
+  </div>
+  <div class="hero-badge">🏁 Speed. Friendship. Racing. 🏁</div>
+  <h1>Pixar Cars</h1>
+  <p>Lightning McQueen, Radiator Springs, and the race around the world — Jaydon's heart races every time Cars comes on!</p>
+</section>
+
+<div class="content">
+  <div class="race-track">
+    <div>
+      <span class="finish-flag">🏁</span>
+      <h2>Ka-chow!</h2>
+      <p>Lightning McQueen's famous cry!</p>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    <p>"Speed. I am speed."</p>
+    <cite>— Lightning McQueen</cite>
+  </div>
+
+  <h2 style="font-family: 'Fredoka One', cursive; color: var(--red); text-align: center; margin-bottom: 1.5rem;">Why Jaydon Loves Cars</h2>
+  <div class="fact-cards">
+    <div class="fact-card">
+      <span class="icon">🏎️</span>
+      <h3>Lightning McQueen</h3>
+      <p>The fastest car in the world! Jaydon thinks he's the coolest character ever.</p>
+    </div>
+    <div class="fact-card">
+      <span class="icon">🛣️</span>
+      <h3>Radiator Springs</h3>
+      <p>A whole town of cars with personalities! Doc, Mater, Sally — they're like family.</p>
+    </div>
+    <div class="fact-card">
+      <span class="icon">💨</span>
+      <h3>Fast Racing</h3>
+      <p>Zooming around the track, drifting corners, winning the Piston Cup!</p>
+    </div>
+    <div class="fact-card">
+      <span class="icon">🤝</span>
+      <h3>Best Friends</h3>
+      <p>McQueen learns that friendship matters more than winning. Jaydon loves that lesson!</p>
+    </div>
+  </div>
+
+  <h2 style="font-family: 'Fredoka One', cursive; color: var(--red); text-align: center; margin-bottom: 1.5rem;">Favorite Characters</h2>
+  <div class="car-gallery">
+    <div class="car-card">
+      <span class="car-icon">🏎️</span>
+      <span class="car-name">Lightning McQueen</span>
+      <div class="car-trait">The Star</div>
+    </div>
+    <div class="car-card">
+      <span class="car-icon">🔧</span>
+      <span class="car-name">Mater</span>
+      <div class="car-trait">Best Tow Buddy</div>
+    </div>
+    <div class="car-card">
+      <span class="car-icon">💙</span>
+      <span class="car-name">Sally</span>
+      <div class="car-trait">Porsche 911</div>
+    </div>
+    <div class="car-card">
+      <span class="car-icon">👨‍⚕️</span>
+      <span class="car-name">Doc Hudson</span>
+      <div class="car-trait">The Wise One</div>
+    </div>
+    <div class="car-card">
+      <span class="car-icon">🏁</span>
+      <span class="car-name">Chick Hicks</span>
+      <div class="car-trait">The Bully</div>
+    </div>
+    <div class="car-card">
+      <span class="car-icon">🛻</span>
+      <span class="car-name">Mack</span>
+      <div class="car-trait">The Transporter</div>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="index.html" class="btn-back">← Back to Jaydon's Fanclub</a>
+  </div>
+</div>
+
+<footer>
+  <p>Made with 💛 for Jaydon | Pixar Cars © Disney</p>
+  <p style="margin-top: 0.5rem;">Powered by <a href="https://gentoolinkwebservices.com" target="_blank">Gentoolink Web Services Inc.</a></p>
+</footer>
+
+</body>
+</html>
