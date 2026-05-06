@@ -75,6 +75,25 @@
     }
     @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
+    /* X-Wing flying across the hero */
+    .xwing-fly {
+      position: absolute;
+      top: 35%;
+      font-size: 3.5rem;
+      z-index: 2;
+      animation: flyAcross 8s linear infinite;
+      filter: drop-shadow(0 0 15px rgba(255,214,0,0.8));
+      opacity: 0;
+    }
+    @keyframes flyAcross {
+      0% { transform: translateX(-150px) scale(0.6); opacity: 0; }
+      5% { opacity: 1; }
+      45% { transform: translateX(calc(100vw + 100px)) scale(0.8); opacity: 1; }
+      50% { transform: translateX(calc(100vw + 100px)) scale(0.8); opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .xwing-fly-delayed { animation-delay: 3s; top: 55%; }
+
     .lightsaber-divider {
       display: flex; align-items: center; justify-content: center; gap: 1rem;
       padding: 2rem; position: relative; z-index: 1;
@@ -167,6 +186,10 @@
     <div class="star-dot" style="width:2px;height:2px;top:70%;left:35%;animation-delay:1.2s"></div>
     <div class="star-dot" style="width:3px;height:3px;top:25%;left:40%;animation-delay:0.8s"></div>
   </div>
+
+  <!-- X-Wings flying across -->
+  <div class="xwing-fly">🚀</div>
+  <div class="xwing-fly xwing-fly-delayed">🚀</div>
   <div class="hero-badge">🌌 May the Force Be With Jaydon 🌌</div>
   <h1>Star Wars</h1>
   <p>A long, long time ago in a galaxy far, far away... Jaydon discovered his love for Star Wars. Now it's one of his all-time favorites!</p>
