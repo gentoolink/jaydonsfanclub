@@ -79,11 +79,14 @@
     .xwing-fly {
       position: absolute;
       top: 35%;
-      font-size: 3.5rem;
       z-index: 2;
       animation: flyAcross 8s linear infinite;
-      filter: drop-shadow(0 0 15px rgba(255,214,0,0.8));
       opacity: 0;
+    }
+    .xwing-fly img {
+      width: 80px;
+      height: auto;
+      filter: drop-shadow(0 0 15px rgba(255, 214, 0, 0.8));
     }
     @keyframes flyAcross {
       0% { transform: translateX(-150px) scale(0.6); opacity: 0; }
@@ -187,9 +190,9 @@
     <div class="star-dot" style="width:3px;height:3px;top:25%;left:40%;animation-delay:0.8s"></div>
   </div>
 
-  <!-- X-Wings flying across -->
-  <div class="xwing-fly">🚀</div>
-  <div class="xwing-fly xwing-fly-delayed">🚀</div>
+  <!-- TIE Fighters flying across -->
+  <div class="xwing-fly"><img src="vader.svg" alt="TIE Fighter"></div>
+  <div class="xwing-fly xwing-fly-delayed"><img src="vader.svg" alt="TIE Fighter"></div>
   <div class="hero-badge">🌌 May the Force Be With Jaydon 🌌</div>
   <h1>Star Wars</h1>
   <p>A long, long time ago in a galaxy far, far away... Jaydon discovered his love for Star Wars. Now it's one of his all-time favorites!</p>
